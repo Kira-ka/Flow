@@ -17,7 +17,7 @@ import ru.netology.nmedia.error.UnknownError
 import java.io.IOException
 
 class PostRepositoryImpl(private val dao: PostDao) : PostRepository {
-    override val data = dao.getAll()
+    override val data = dao.showAllVisible()
         .map(List<PostEntity>::toDto)
         .flowOn(Dispatchers.Default)
 

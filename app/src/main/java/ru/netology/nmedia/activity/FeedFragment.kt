@@ -65,7 +65,7 @@ class FeedFragment : Fragment() {
             }
         }
         viewModel.data.observe(viewLifecycleOwner) { state ->
-            adapter.submitList(state.posts.filter { it.visible })
+            adapter.submitList(state.posts)
             binding.emptyText.isVisible = state.empty
         }
         viewModel.newerCount.observe(viewLifecycleOwner) {
@@ -89,6 +89,7 @@ class FeedFragment : Fragment() {
 
         binding.swiperefresh.setOnRefreshListener {
             viewModel.refreshPosts()
+            binding.newPosts.visibility = View.GONE
         }
 
         binding.fab.setOnClickListener {

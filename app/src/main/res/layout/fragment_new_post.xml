@@ -10,26 +10,47 @@
         android:id="@+id/edit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:background="@android:color/transparent"
-        />
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
 
-    <com.google.android.material.bottomappbar.BottomAppBar
+    <LinearLayout
         android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        />
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/description_post_save"
-        app:srcCompat="@drawable/ic_ok_24dp"
-        app:layout_anchor="@id/bottomAppBar"
-        />
+        <ImageView
+            android:id="@+id/takePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            android:padding="@dimen/common_spacing"
+            android:background="?android:selectable"
+            />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <ImageView
+            android:id="@+id/pickPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_add_photo_alternate_24"
+            android:padding="@dimen/common_spacing"
+            android:background="?android:selectable"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
